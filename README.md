@@ -28,10 +28,14 @@
 	</a>
 </p>
 
+---
+
 ### 額外新增服務
 #### PHP：7.2, 7.3, 7.4, 8.1, 8.2
 #### Mysql： 5.7, 8.0
-##### 啟動指令：
+
+---
+### 啟動指令：
 ```
 docker-compose up -d nginx mysql phpmyadmin redis workspace php82-fpm php81-fpm php73-fpm php72-fpm php71-fpm mysql-8.0
 ```
