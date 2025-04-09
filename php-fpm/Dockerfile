@@ -1362,6 +1362,22 @@ RUN if [ ${INSTALL_DNSUTILS} = true ]; then \
 
 RUN set -xe; php -v | grep -q "PHP ${LARADOCK_PHP_VERSION}."
 
+###########################################################################
+# COMPOSER:
+###########################################################################
+
+# 設置環境變量
+USER root
+
+# 安裝依賴工具
+RUN apt-get update && apt-get install -y \
+    git \
+    unzip \
+    && apt-get clean
+
+# 安裝 Composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
 #
 #--------------------------------------------------------------------------
 # Final Touch
